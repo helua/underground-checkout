@@ -239,7 +239,7 @@ const Checkout: React.FC<Props> = ({
   }
 
   return (
-    <OrderContainer orderId={ctx.orderId}>
+    <OrderContainer orderId={ctx.orderId} fetchOrder={ctx.getOrder}>
       <GTMProvider
         gtmId={gtmId}
         skipBeginCheckout={checkoutAlreadyStarted || ctx.isComplete}
