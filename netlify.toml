@@ -8,4 +8,4 @@ from = "/*"
 to = "/index.html"
 status = 200
 [template.environment]
-NEXT_PUBLIC_SLUG = "Your organization slug"
+NEXT_PUBLIC_SLUG = "fairtouch"
