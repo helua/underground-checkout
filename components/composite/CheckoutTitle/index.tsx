@@ -13,6 +13,14 @@ export const CheckoutHead: React.FC<Props> = (props) => {
     <Head>
       <title>{t("general.title", { companyName: props.title })}</title>
       <link rel="icon" type="image/x-icon" href={props.favicon} />
+      <link
+        rel="stylesheet"
+        href="https://geowidget.inpost.pl/inpost-geowidget.css"
+      />
+      <script
+        src="https://geowidget.inpost.pl/inpost-geowidget.js"
+        defer
+      ></script>
     </Head>
   )
 }

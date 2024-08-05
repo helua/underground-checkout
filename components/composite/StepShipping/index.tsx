@@ -205,6 +205,18 @@ export const StepShipping: React.FC<Props> = () => {
                               </div>
                             }
                           >
+                            <h2>Select Pickup Point</h2>
+                            <inpost-geowidget
+                                token='eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkVzROZW9TeXk0OHpCOHg4emdZX2t5dFNiWHY3blZ0eFVGVFpzWV9TUFA4In0.eyJleHAiOjIwMzgyMzAzNjMsImlhdCI6MTcyMjg3MDM2MywianRpIjoiY2ViMTcwYTItNGYzNi00NTM4LThmNjUtOGI2NWU3MzFjNmExIiwiaXNzIjoiaHR0cHM6Ly9zYW5kYm94LWxvZ2luLmlucG9zdC5wbC9hdXRoL3JlYWxtcy9leHRlcm5hbCIsInN1YiI6ImY6N2ZiZjQxYmEtYTEzZC00MGQzLTk1ZjYtOThhMmIxYmFlNjdiOmRqMVFROXNlcDRWUU9iZ3ZxdlZqZUduUEtXamZHcnBZVWhYN3YyMmhRY1UiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzaGlweCIsInNlc3Npb25fc3RhdGUiOiIwMDA4ODMzNy05NDA1LTRkZWQtYjJmZC02MDExOWMyYmZjMTYiLCJzY29wZSI6Im9wZW5pZCBhcGk6YXBpcG9pbnRzIiwic2lkIjoiMDAwODgzMzctOTQwNS00ZGVkLWIyZmQtNjAxMTljMmJmYzE2IiwiYWxsb3dlZF9yZWZlcnJlcnMiOiJmYWlydG91Y2gtY2hlY2tvdXQubmV0bGlmeS5hcHAiLCJ1dWlkIjoiYmUzMDZkYjQtN2E3OC00ZjA0LTg1MDYtMjkzYWM2ZDdkNmExIn0.BTOg0JzfJWLnvxevhWoXlRSoIyU7z9zvIYxRXB76ghV0SGa29kLPn-f_c5zoJ3ieaUDLND8R-mrQ1JQdAzeGMB4cjLt_txU0VrceHuacfeOPYa7Rxzjg7uQg7HBTEJN-7f9woQLeccu6vkQXoCTOWRNxIAymFzVxdl_km8iGkzgBmdtmOJotvbrj0XNZmfXf-8o0PHIrjjL4uyAmk7UMjtbwjAOHNf5fLHVkeA5gRNR3DbqpNV46UtxwMVfRIVDvokoqoas1s4655rU3CUPUR-KOvNJIcgnfkR-BXTw8qNC0ajy9Jh1pJ1k10e2fPqUvg_5royEraGL8oOXJENz0Iw'
+                                language="pl"
+                                config="parcelcollect"
+                            ></inpost-geowidget>
+
+                            <input
+                              type="hidden"
+                              id="selectedPickupPoint"
+                              name="selectedPickupPoint"
+                            />
                             <ShippingWrapper data-testid="shipments-container">
                               {shipments.length > 1 && (
                                 <ShippingTitle>

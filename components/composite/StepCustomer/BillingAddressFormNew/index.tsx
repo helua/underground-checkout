@@ -29,6 +29,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const countries = settings?.config?.checkout?.billing_countries
   const states = settings?.config?.checkout?.billing_states
   const defaultCountry = settings?.config?.checkout?.default_country
+  console.log(settings  )
 
   return (
     <Wrapper>
@@ -74,7 +75,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           countries={countries}
           defaultCountry={defaultCountry}
           openShippingAddress={openShippingAddress}
-          value={billingAddress?.country_code || ""}
+          value={billingAddress?.country_code || "PL"}
         />
       </Grid>
       <Grid>
