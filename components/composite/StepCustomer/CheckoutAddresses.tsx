@@ -40,7 +40,6 @@ export const CheckoutAddresses: React.FC<Props> = ({
   isShipmentRequired,
   isLocalLoader,
   shipToDifferentAddress,
-  setShipToDifferentAddress,
   openShippingAddress,
   setCustomerEmail,
   handleSave,
@@ -50,12 +49,12 @@ export const CheckoutAddresses: React.FC<Props> = ({
   const [shippingAddressFill, setShippingAddressFill] =
     useState<NullableType<Address>>(shippingAddress)
 
-  const handleToggleDifferentAddress = () => {
-    return [
-      setShipToDifferentAddress(!shipToDifferentAddress),
-      setShippingAddressFill(undefined),
-    ]
-  }
+  // const handleToggleDifferentAddress = () => {
+  //   return [
+  //     setShipToDifferentAddress(!shipToDifferentAddress),
+  //     setShippingAddressFill(undefined),
+  //   ]
+  // }
 
   useEffect(() => {
     if (shipToDifferentAddress && hasSameAddresses) {
