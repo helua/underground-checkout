@@ -10,7 +10,6 @@ import styled from "styled-components"
 import { ShippingToggleProps } from "components/composite/StepCustomer"
 import { ButtonCss, ButtonWrapper } from "components/ui/Button"
 import { SpinnerIcon } from "components/ui/SpinnerIcon"
-import { Toggle } from "components/ui/Toggle"
 
 import { AddressSectionEmail } from "./AddressSectionEmail"
 import { AddressSectionSaveForm } from "./AddressSectionSaveForm"
@@ -43,7 +42,6 @@ export const CheckoutAddresses: React.FC<Props> = ({
   shipToDifferentAddress,
   setShipToDifferentAddress,
   openShippingAddress,
-  disabledShipToDifferentAddress,
   setCustomerEmail,
   handleSave,
 }: Props) => {
@@ -85,7 +83,8 @@ export const CheckoutAddresses: React.FC<Props> = ({
             />
           </div>
         </BillingAddressForm>
-        {isShipmentRequired && (
+        {isShipmentRequired}
+        {/* {isShipmentRequired && (
           <Toggle
             disabled={disabledShipToDifferentAddress}
             data-testid="button-ship-to-different-address"
@@ -94,8 +93,7 @@ export const CheckoutAddresses: React.FC<Props> = ({
             checked={shipToDifferentAddress}
             onChange={handleToggleDifferentAddress}
           />
-        )}
-
+        )} */}
         {isShipmentRequired && shipToDifferentAddress && (
           <ShippingAddressForm
             autoComplete="on"
