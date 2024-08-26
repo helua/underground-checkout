@@ -32,25 +32,25 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handlePointSelected = (event: any) => {
-      const selectedPoint = event.detail;
-      const pointId = selectedPoint.id;
+      const selectedPoint = event.detail
+      const pointId = selectedPoint.id
 
       // Copy the point ID
-      setSelectedPointId(pointId);
+      setSelectedPointId(pointId)
 
       // Close the popup
-      closePopup();
-    };
+      closePopup()
+    }
 
     document.addEventListener("onpointselect", handlePointSelected)
 
     return () => {
       document.removeEventListener("onpointselect", handlePointSelected)
-    };
-  }, []);
+    }
+  }, [])
 
   if (!appCtx || !settings) {
-    return null;
+    return null
   }
   if (!appCtx || !settings) {
     return null
