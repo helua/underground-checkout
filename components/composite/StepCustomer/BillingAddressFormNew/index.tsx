@@ -9,10 +9,6 @@ import { AddressInputGroup } from "components/composite/StepCustomer/AddressInpu
 import { AppContext } from "components/data/AppProvider"
 import { useSettingsOrInvalid } from "components/hooks/useSettingsOrInvalid"
 import { Button, ButtonWrapper } from "components/ui/Button"
-// import { CouponFieldWrapper, CouponFormWrapper, StyledGiftCardOrCouponInput, StyledGiftCardOrCouponSubmit } from "components/composite/OrderSummary/CouponOrGiftCard/styled"
-// import { StyledErrors } from "components/composite/StepPlaceOrder/styled"
-// import { t } from "i18next"
-// import { GiftCardOrCouponForm } from "@commercelayer/react-components"
 
 interface Props {
   billingAddress: NullableType<Address>

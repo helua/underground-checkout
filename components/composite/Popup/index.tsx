@@ -1,6 +1,3 @@
-// components/Popup.js
-import { ColorModule } from "@faker-js/faker"
-import React from "react"
 import { CSSProperties } from "styled-components"
 
 interface PopupProps {
