@@ -1,6 +1,7 @@
 // components/Popup.js
 import { ColorModule } from "@faker-js/faker"
 import React from "react"
+import { CSSProperties } from "styled-components"
 
 interface PopupProps {
   isOpen: boolean
@@ -23,7 +24,7 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, children }) => {
   )
 }
 
-const overlayStyles = {
+const overlayStyles: CSSProperties = {
   position: "fixed",
   top: 0,
   left: 0,
@@ -36,7 +37,7 @@ const overlayStyles = {
   zIndex: 1000,
 }
 
-const popupStyles = {
+const popupStyles: CSSProperties = {
   backgroundColor: "#fff",
   padding: "20px",
   borderRadius: "8px",
@@ -46,7 +47,7 @@ const popupStyles = {
   zIndex: 1001,
 }
 
-const closeButtonStyles = {
+const closeButtonStyles: CSSProperties = {
   position: "absolute",
   top: "10px",
   right: "10px",
