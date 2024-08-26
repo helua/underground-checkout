@@ -33,13 +33,14 @@ export const BillingAddressFormNew: React.FC<Props> = ({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handlePointSelected = (event: any) => {
       const selectedPoint = event.detail
+      console.log("Selected point:", selectedPoint)
       const pointId = selectedPoint.id
 
       // Copy the point ID
       setSelectedPointId(pointId)
 
       // Close the popup
-      closePopup()
+      // closePopup()
     }
 
     document.addEventListener("onpointselect", handlePointSelected)
