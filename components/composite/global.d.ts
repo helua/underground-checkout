@@ -7,6 +7,7 @@ declare namespace JSX {
       token: string
       language: string
       config: string
+      onpoint: string
     }
   }
 }
