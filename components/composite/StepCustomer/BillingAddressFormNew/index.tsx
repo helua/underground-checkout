@@ -22,39 +22,12 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const appCtx = useContext(AppContext)
   const { settings } = useSettingsOrInvalid()
   const [isPopupOpen, setIsPopupOpen] = useState(false)
-  const [selectedPointId, setSelectedPointId] = useState<string | null>(null)
   const openPopup = () => {
     setIsPopupOpen(true)
   }
   const closePopup = () => {
     setIsPopupOpen(false)
   }
-  useEffect(() => {
-    const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
-      console.log("Selected point:", event)
-
-      const selectedPoint = event.detail
-      const pointId = selectedPoint.id
-
-      // Copy the point ID
-      setSelectedPointId(pointId)
-
-      // Close the popup
-      closePopup()
-    }
-
-    document.addEventListener(
-      "onpointselect",
-      handlePointSelected as EventListener
-    )
-
-    return () => {
-      document.removeEventListener(
-        "onpointselect",
-        handlePointSelected as EventListener
-      )
-    }
-  }, [])
 
   if (!appCtx || !settings) {
     return null
@@ -149,7 +122,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           resource="billing_address"
           required={false}
           type="text"
-          value={selectedPointId || billingAddress?.line_2 || ""}
+          value={billingAddress?.line_2 || ""}
         />
         <div className="mb-8">
           <ButtonWrapper>
