@@ -14,6 +14,50 @@ interface Props {
   billingAddress: NullableType<Address>
   openShippingAddress: (props: ShippingToggleProps) => void
 }
+interface Location {
+  longitude: number
+  latitude: number
+}
+
+interface AddressDetails {
+  city: string
+  province: string
+  post_code: string
+  street: string
+  building_number: string
+  flat_number: string | null
+}
+
+interface SelectedPoint {
+  href: string
+  name: string
+  type: string[]
+  status: string
+  location: Location
+  location_type: string
+  location_description: string
+  distance: number
+  opening_hours: string
+  address: Address
+  address_details: AddressDetails
+  phone_number: string | null
+  payment_point_descr: string
+  functions: string[]
+  partner_id: number
+  is_next: boolean
+  payment_available: boolean
+  virtual: string
+  recommended_low_interest_box_machines_list: string[]
+  apm_doubled: string
+  location_247: boolean
+  operating_hours_extended: object
+  agency: string
+  image_url: string
+  easy_access_zone: boolean
+  air_index_level: string | null
+  physical_type_mapped: string
+  physical_type_description: string | null
+}
 
 export const BillingAddressFormNew: React.FC<Props> = ({
   billingAddress,
@@ -26,9 +70,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const [selectedPointAddress, setSelectedPointAddress] = useState<
     string | null
   >(null)
-  // const [selectedPointCity, setSelectedPointCity] = useState<string | null>(null)
-  // const [selectedPointZipCode, setSelectedPointZipCode] = useState<string | null>(null)
-  // const [selectedPointState, setSelectedPointState] = useState<string | null>(null)
+
   const openPopup = () => {
     setIsPopupOpen(true)
     // const elem = document.documentElement
@@ -56,20 +98,23 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   }
   // simple working
   useEffect(() => {
-    const handlePointSelected = (
-      event: CustomEvent<{ name: string; address: string }>
-    ) => {
+    const handlePointSelected = (event: CustomEvent<SelectedPoint>) => {
       console.log("Selected point:", event.detail)
 
       const selectedPoint = event.detail
       const pointId = selectedPoint.name
-      // const pointCity = selectedPoint.name
-      const pointAddress = selectedPoint.address
-      // const pointZipCode = selectedPoint.name
-      // const pointState = selectedPoint.name
-
+      const pointCity = selectedPoint.address_details.city
+      const pointAddress =
+        selectedPoint.address_details.street +
+        selectedPoint.address_details.building_number
+      const pointZipCode = selectedPoint.address_details.post_code
+      const pointState = selectedPoint.address_details.province
       setSelectedPointId(pointId)
       setSelectedPointAddress(pointAddress)
+      setSelectedPointAddress(pointCity)
+      setSelectedPointAddress(pointZipCode)
+      setSelectedPointAddress(pointState)
+
       closePopup()
     }
 
