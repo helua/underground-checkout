@@ -1,5 +1,5 @@
 import { Address } from "@commercelayer/sdk"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import styled from "styled-components"
 import tw from "twin.macro"
 
