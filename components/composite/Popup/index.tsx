@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { CSSProperties } from "styled-components"
 
 interface PopupProps {
@@ -9,33 +8,6 @@ interface PopupProps {
 
 const Popup: React.FC<PopupProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null
-
-  useEffect(() => {
-    const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
-      console.log("Selected point:", event)
-
-      // const selectedPoint = event.detail
-      // const pointId = selectedPoint.id
-
-      // Copy the point ID
-      // setSelectedPointId(pointId)
-
-      // Close the popup
-      // closePopup()
-    }
-
-    document.addEventListener(
-      "onpointselect",
-      handlePointSelected as EventListener
-    )
-
-    return () => {
-      document.removeEventListener(
-        "onpointselect",
-        handlePointSelected as EventListener
-      )
-    }
-  }, [])
 
   return (
     <div style={overlayStyles} onClick={onClose}>
