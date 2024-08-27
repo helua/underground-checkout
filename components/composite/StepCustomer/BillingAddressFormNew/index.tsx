@@ -21,14 +21,14 @@ export const BillingAddressFormNew: React.FC<Props> = ({
 }: Props) => {
   const appCtx = useContext(AppContext)
   const { settings } = useSettingsOrInvalid()
-  const [isPopupOpen, setIsPopupOpen] = useState(false)
+  // const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [selectedPointId, setSelectedPointId] = useState<string | null>(null)
-  const openPopup = () => {
-    setIsPopupOpen(true)
-  }
-  const closePopup = () => {
-    setIsPopupOpen(false)
-  }
+  // const openPopup = () => {
+  //   setIsPopupOpen(true)
+  // }
+  // const closePopup = () => {
+  //   setIsPopupOpen(false)
+  // }
   useEffect(() => {
     const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
       console.log("Selected point:", event)
@@ -40,7 +40,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
       setSelectedPointId(pointId)
 
       // Close the popup
-      closePopup()
+      // closePopup()
     }
 
     document.addEventListener(
@@ -54,7 +54,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
         handlePointSelected as EventListener
       )
     }
-  }, [closePopup])
+  }, [])
 
   if (!appCtx || !settings) {
     return null
