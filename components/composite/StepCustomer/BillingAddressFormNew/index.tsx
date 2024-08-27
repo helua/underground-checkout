@@ -27,10 +27,12 @@ export const BillingAddressFormNew: React.FC<Props> = ({
     setIsPopupOpen(true)
   }
   const closePopup = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
     setIsPopupOpen(false)
   }
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
       console.log("Selected point:", event)
 
@@ -39,7 +41,9 @@ export const BillingAddressFormNew: React.FC<Props> = ({
 
       // Copy the point ID
       setSelectedPointId(pointId)
-
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
       // Close the popup
       closePopup()
     }
