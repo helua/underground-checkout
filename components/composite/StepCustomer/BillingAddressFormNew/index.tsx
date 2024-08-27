@@ -70,9 +70,15 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const [selectedPointAddress, setSelectedPointAddress] = useState<
     string | null
   >(null)
-  const [selectedPointCity, setSelectedPointCity] = useState<string | null>(null)
-  const [selectedPointZipCode, setSelectedPointZipCode] = useState<string | null>(null)
-  const [selectedPointState, setSelectedPointState] = useState<string | null>(null)
+  const [selectedPointCity, setSelectedPointCity] = useState<string | null>(
+    null
+  )
+  const [selectedPointZipCode, setSelectedPointZipCode] = useState<
+    string | null
+  >(null)
+  const [selectedPointState, setSelectedPointState] = useState<string | null>(
+    null
+  )
   const openPopup = () => {
     setIsPopupOpen(true)
     // const elem = document.documentElement
@@ -119,6 +125,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
       setSelectedPointState(pointState)
 
       closePopup()
+      alert("Pobraliśmy numer Twojego Paczkomatu oraz jego dane adresowe")
     }
 
     document.addEventListener(
