@@ -108,14 +108,15 @@ export const BillingAddressFormNew: React.FC<Props> = ({
       const pointCity = selectedPoint.address_details.city
       const pointAddress =
         selectedPoint.address_details.street +
+        " " +
         selectedPoint.address_details.building_number
       const pointZipCode = selectedPoint.address_details.post_code
       const pointState = selectedPoint.address_details.province
       setSelectedPointId(pointId)
       setSelectedPointAddress(pointAddress)
-      setSelectedPointAddress(pointCity)
-      setSelectedPointAddress(pointZipCode)
-      setSelectedPointAddress(pointState)
+      setSelectedPointCity(pointCity)
+      setSelectedPointZipCode(pointZipCode)
+      setSelectedPointState(pointState)
 
       closePopup()
     }
