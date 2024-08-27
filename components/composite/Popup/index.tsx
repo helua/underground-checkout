@@ -36,10 +36,10 @@ const overlayStyles: CSSProperties = {
 
 const popupStyles: CSSProperties = {
   backgroundColor: "#fff",
-  padding: "20px",
+  padding: "0px",
   borderRadius: "8px",
-  height: "90vh",
-  maxWidth: "90vw",
+  height: "100vh",
+  maxWidth: "100vw",
   width: "100%",
   zIndex: 1001,
 }
@@ -47,12 +47,13 @@ const popupStyles: CSSProperties = {
 const closeButtonStyles: CSSProperties = {
   position: "absolute",
   top: "10px",
-  right: "20px",
+  right: "50px",
   background: "none",
   border: "none",
-  fontSize: "18px",
+  fontSize: "16px",
   cursor: "pointer",
   color: "rgb(230, 145, 0)",
+  backgroundColor: "black",
 }
 
 export default Popup
