@@ -38,8 +38,8 @@ const popupStyles: CSSProperties = {
   backgroundColor: "#fff",
   padding: "20px",
   borderRadius: "8px",
-  height: "80vh",
-  maxWidth: "700px",
+  height: "90vh",
+  maxWidth: "90vw",
   width: "100%",
   zIndex: 1001,
 }
@@ -47,7 +47,7 @@ const popupStyles: CSSProperties = {
 const closeButtonStyles: CSSProperties = {
   position: "absolute",
   top: "10px",
-  right: "10px",
+  right: "20px",
   background: "none",
   border: "none",
   fontSize: "18px",
