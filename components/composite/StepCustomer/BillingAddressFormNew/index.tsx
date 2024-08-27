@@ -50,11 +50,15 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   }
 
   useEffect(() => {
-    const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
+    const handlePointSelected = (
+      event: CustomEvent<{
+        name: string
+      }>
+    ) => {
       console.log("Selected point:", event.detail)
 
       const selectedPoint = event.detail
-      const pointId = selectedPoint.id
+      const pointId = selectedPoint.name
 
       setSelectedPointId(pointId)
       closePopup()
