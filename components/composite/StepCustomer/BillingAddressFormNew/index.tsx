@@ -8,7 +8,7 @@ import { ShippingToggleProps } from "components/composite/StepCustomer"
 import { AddressInputGroup } from "components/composite/StepCustomer/AddressInputGroup"
 import { AppContext } from "components/data/AppProvider"
 import { useSettingsOrInvalid } from "components/hooks/useSettingsOrInvalid"
-import { Button, ButtonWrapper } from "components/ui/Button"
+// import { Button, ButtonWrapper } from "components/ui/Button"
 
 interface Props {
   billingAddress: NullableType<Address>
@@ -23,23 +23,23 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const { settings } = useSettingsOrInvalid()
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [selectedPointId, setSelectedPointId] = useState<string | null>(null)
-  const openPopup = () => {
-    // setIsPopupOpen(true)
-    const elem = document.documentElement
-    if (elem.requestFullscreen) {
-      elem
-        .requestFullscreen()
-        .then(() => {
-          setIsPopupOpen(true)
-        })
-        .catch((err) => {
-          console.error("Error attempting to enter fullscreen mode:", err)
-          setIsPopupOpen(true) // Fallback to open popup even if fullscreen fails
-        })
-    } else {
-      setIsPopupOpen(true) // Fallback for browsers that don't support fullscreen API
-    }
-  }
+  // const openPopup = () => {
+  //   // setIsPopupOpen(true)
+  //   const elem = document.documentElement
+  //   if (elem.requestFullscreen) {
+  //     elem
+  //       .requestFullscreen()
+  //       .then(() => {
+  //         setIsPopupOpen(true)
+  //       })
+  //       .catch((err) => {
+  //         console.error("Error attempting to enter fullscreen mode:", err)
+  //         setIsPopupOpen(true) // Fallback to open popup even if fullscreen fails
+  //       })
+  //   } else {
+  //     setIsPopupOpen(true) // Fallback for browsers that don't support fullscreen API
+  //   }
+  // }
   const closePopup = () => {
     if (document.fullscreenElement) {
       document.exitFullscreen().catch((err) => {
