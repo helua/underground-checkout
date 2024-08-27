@@ -8,7 +8,6 @@ interface PopupProps {
 
 const Popup: React.FC<PopupProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null
-
   return (
     <div style={overlayStyles} onClick={onClose}>
       <div style={popupStyles}>

@@ -74,9 +74,53 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   //     )
   //   }
   // }, [closePopup])
+
+  // useEffect(() => {
+  //   const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
+  //     console.log("Selected point:", event.detail)
+
+  //     const selectedPoint = event.detail
+  //     const pointId = selectedPoint.id
+
+  //     setSelectedPointId(pointId)
+  //     closePopup()
+  //   }
+
+  //   document.addEventListener(
+  //     "onpointselect",
+  //     handlePointSelected as EventListener
+  //   )
+
+  //   return () => {
+  //     document.removeEventListener(
+  //       "onpointselect",
+  //       handlePointSelected as EventListener
+  //     )
+  //   }
+  // }, [closePopup])
+
+  useEffect(() => {
+    const debugHandler = (event: Event) => {
+      console.log("Global Event Captured:", event)
+    }
+
+    document.addEventListener("onpointselect", debugHandler)
+
+    return () => {
+      document.removeEventListener("onpointselect", debugHandler)
+    }
+  }, [])
+
+  window.addEventListener("unhandledrejection", (event) => {
+    if (event.reason.message === "Not in fullscreen mode") {
+      console.warn("Fullscreen mode required by GeoWidget but not enabled.")
+      event.preventDefault() // Prevents the error from stopping execution
+    }
+  })
+
   useEffect(() => {
     const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
-      console.log("Selected point:", event)
+      console.log("Selected point:", event.detail)
 
       const selectedPoint = event.detail
       const pointId = selectedPoint.id
@@ -90,6 +134,14 @@ export const BillingAddressFormNew: React.FC<Props> = ({
       handlePointSelected as EventListener
     )
 
+    // Debug: Manual Event Dispatch
+    setTimeout(() => {
+      const testEvent = new CustomEvent("onpointselect", {
+        detail: { id: "test-point-id" },
+      })
+      document.dispatchEvent(testEvent)
+    }, 3000) // Dispatch after 3 seconds for testing
+
     return () => {
       document.removeEventListener(
         "onpointselect",
@@ -97,13 +149,6 @@ export const BillingAddressFormNew: React.FC<Props> = ({
       )
     }
   }, [closePopup])
-
-  window.addEventListener("unhandledrejection", (event) => {
-    if (event.reason.message === "Not in fullscreen mode") {
-      console.warn("Fullscreen mode required by GeoWidget but not enabled.")
-      event.preventDefault() // Prevents the error from stopping execution
-    }
-  })
 
   if (!appCtx || !settings) {
     return null
