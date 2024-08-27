@@ -38,8 +38,8 @@ const popupStyles: CSSProperties = {
   backgroundColor: "#fff",
   padding: "0px",
   borderRadius: "8px",
-  height: "100vh",
-  maxWidth: "100vw",
+  height: "90vh",
+  maxWidth: "80vw",
   width: "100%",
   zIndex: 1001,
 }
@@ -47,13 +47,14 @@ const popupStyles: CSSProperties = {
 const closeButtonStyles: CSSProperties = {
   position: "absolute",
   top: "10px",
-  right: "50px",
+  right: "20px",
   background: "none",
   border: "none",
   fontSize: "16px",
   cursor: "pointer",
   color: "rgb(230, 145, 0)",
-  backgroundColor: "black",
+  backgroundColor: "rgb(30, 12, 0, 0.2)",
+  padding: "5px",
 }
 
 export default Popup
