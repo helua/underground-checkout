@@ -70,7 +70,9 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const [selectedPointAddress, setSelectedPointAddress] = useState<
     string | null
   >(null)
-
+  const [selectedPointCity, setSelectedPointCity] = useState<string | null>(null)
+  const [selectedPointZipCode, setSelectedPointZipCode] = useState<string | null>(null)
+  const [selectedPointState, setSelectedPointState] = useState<string | null>(null)
   const openPopup = () => {
     setIsPopupOpen(true)
     // const elem = document.documentElement
@@ -250,14 +252,14 @@ export const BillingAddressFormNew: React.FC<Props> = ({
         fieldName="billing_address_line_1"
         resource="billing_address"
         type="text"
-        value={billingAddress?.line_1 || ""}
+        value={selectedPointAddress || billingAddress?.line_1 || ""}
       />
       <Grid>
         <AddressInputGroup
           fieldName="billing_address_city"
           resource="billing_address"
           type="text"
-          value={selectedPointAddress || billingAddress?.city || ""}
+          value={selectedPointCity || billingAddress?.city || ""}
         />
         <AddressInputGroup
           fieldName="billing_address_country_code"
@@ -277,13 +279,13 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           // @ts-expect-error missing type
           states={states}
           type="text"
-          value={billingAddress?.state_code || ""}
+          value={selectedPointState || billingAddress?.state_code || ""}
         />
         <AddressInputGroup
           fieldName="billing_address_zip_code"
           resource="billing_address"
           type="text"
-          value={billingAddress?.zip_code || ""}
+          value={selectedPointZipCode || billingAddress?.zip_code || ""}
         />
       </Grid>
       <AddressInputGroup

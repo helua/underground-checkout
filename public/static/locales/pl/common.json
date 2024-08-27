@@ -71,7 +71,7 @@
         "addNewAddress": "Dodaj nowy adress",
         "saveAddressBook": "Zachowaj adres w swoim koncie klienta",
         "continueToDelivery": "Dalej do dostawy",
-        "notSet": "Uzupełnij proszę pełny adres oraz numer paczkomatu, jeśli tak jak ja preferujesz tę formę wysyłki.",
+        "notSet": "Uzupełnij proszę swoje dane kontaktowe i wpisz lub wybierz swój Paczkomat, jeśli tak jak ja preferujesz tę formę wysyłki",
         "notSetNoDelivery": "Proszę uzupełnij dane adresowe",
         "closeForm": "Wybierz adres"
     },
