@@ -15,12 +15,12 @@ export const CheckoutHead: React.FC<Props> = (props) => {
       <link rel="icon" type="image/x-icon" href={props.favicon} />
       <link
         rel="stylesheet"
-        // href="https://geowidget.inpost.pl/inpost-geowidget.css"
-        href="https://sandbox-easy-geowidget-sdk.easypack24.net/inpost-geowidget.css"
+        href="https://geowidget.inpost.pl/inpost-geowidget.css"
+        // href="https://sandbox-easy-geowidget-sdk.easypack24.net/inpost-geowidget.css"
       />
       <script
-        // src="https://geowidget.inpost.pl/inpost-geowidget.js"
-        src="https://sandbox-easy-geowidget-sdk.easypack24.net/inpost-geowidget.js"
+        src="https://geowidget.inpost.pl/inpost-geowidget.js"
+        // src="https://sandbox-easy-geowidget-sdk.easypack24.net/inpost-geowidget.js"
         defer
       ></script>
     </Head>
