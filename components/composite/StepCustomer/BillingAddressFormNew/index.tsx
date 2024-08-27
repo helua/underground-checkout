@@ -23,6 +23,12 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const { settings } = useSettingsOrInvalid()
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [selectedPointId, setSelectedPointId] = useState<string | null>(null)
+  const [selectedPointAddress, setSelectedPointAddress] = useState<
+    string | null
+  >(null)
+  // const [selectedPointCity, setSelectedPointCity] = useState<string | null>(null)
+  // const [selectedPointZipCode, setSelectedPointZipCode] = useState<string | null>(null)
+  // const [selectedPointState, setSelectedPointState] = useState<string | null>(null)
   const openPopup = () => {
     setIsPopupOpen(true)
     // const elem = document.documentElement
@@ -50,13 +56,20 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   }
   // simple working
   useEffect(() => {
-    const handlePointSelected = (event: CustomEvent<{ name: string }>) => {
-      console.log("Selected point:", event.detail.name)
+    const handlePointSelected = (
+      event: CustomEvent<{ name: string; address: string }>
+    ) => {
+      console.log("Selected point:", event.detail)
 
       const selectedPoint = event.detail
       const pointId = selectedPoint.name
+      // const pointCity = selectedPoint.name
+      const pointAddress = selectedPoint.address
+      // const pointZipCode = selectedPoint.name
+      // const pointState = selectedPoint.name
 
       setSelectedPointId(pointId)
+      setSelectedPointAddress(pointAddress)
       closePopup()
     }
 
@@ -162,12 +175,6 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           value={billingAddress?.last_name || ""}
         />
       </Grid>
-      <AddressInputGroup
-        fieldName="billing_address_line_1"
-        resource="billing_address"
-        type="text"
-        value={billingAddress?.line_1 || ""}
-      />
       <Grid>
         <AddressInputGroup
           fieldName="billing_address_line_2"
@@ -194,12 +201,18 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           /> */}
         </Popup>
       </Grid>
+      <AddressInputGroup
+        fieldName="billing_address_line_1"
+        resource="billing_address"
+        type="text"
+        value={billingAddress?.line_1 || ""}
+      />
       <Grid>
         <AddressInputGroup
           fieldName="billing_address_city"
           resource="billing_address"
           type="text"
-          value={billingAddress?.city || ""}
+          value={selectedPointAddress || billingAddress?.city || ""}
         />
         <AddressInputGroup
           fieldName="billing_address_country_code"
