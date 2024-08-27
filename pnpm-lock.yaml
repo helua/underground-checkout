@@ -23,8 +23,8 @@ importers:
         specifier: ^4.15.5
         version: 4.15.5(eslint@8.57.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@commercelayer/sdk':
-        specifier: ^6.11.0
-        version: 6.11.0
+        specifier: 6.9.0
+        version: 6.9.0
       '@faker-js/faker':
         specifier: ^8.4.1
         version: 8.4.1
@@ -423,10 +423,6 @@ packages:
     resolution: {integrity: sha512-AdQK3N9VkFLh8gnSy3nTZaGAPomKvrfXKlPZlwjxPVO6ilYLSLrtbNea96X9OegPuxq5mVJEuAK/9/ktW0iMJw==}
     peerDependencies:
       react: '>=18.0.0'
-
-  '@commercelayer/sdk@6.11.0':
-    resolution: {integrity: sha512-ITCq17o+ndf+rCcUVlzT+32OaSClVeBg9F4FlM6WjIKcsJ5bLWNq5gTdxMWPBFHrqknC1SlPVN/dG+42DYyV+w==}
-    engines: {node: '>=20'}
 
   '@commercelayer/sdk@6.9.0':
     resolution: {integrity: sha512-9UN+VKHvVRZuKMRyv2FlEfqARFNiM+OGGsECsThCt8fo/rpo8qD6MGQm+1FNaLYpQBDAJRZABgQVKOXNbfuxng==}
@@ -5146,8 +5142,6 @@ snapshots:
       - eslint
       - react-dom
       - typescript
-
-  '@commercelayer/sdk@6.11.0': {}
 
   '@commercelayer/sdk@6.9.0': {}
 
