@@ -152,9 +152,9 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           value={selectedPointId || billingAddress?.line_2 || ""}
         />
         <div className="mb-8">
-          <ButtonWrapper>
+          {/* <ButtonWrapper>
             <Button onClick={openPopup}>Wybierz Paczkomat</Button>
-          </ButtonWrapper>
+          </ButtonWrapper> */}
         </div>
         {/* <Popup isOpen={isPopupOpen} onClose={closePopup}> */}
         <h2>Wybór Paczkomatu</h2>
