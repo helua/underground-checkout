@@ -24,11 +24,56 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [selectedPointId, setSelectedPointId] = useState<string | null>(null)
   const openPopup = () => {
-    setIsPopupOpen(true)
+    // setIsPopupOpen(true)
+    const elem = document.documentElement
+    if (elem.requestFullscreen) {
+      elem
+        .requestFullscreen()
+        .then(() => {
+          setIsPopupOpen(true)
+        })
+        .catch((err) => {
+          console.error("Error attempting to enter fullscreen mode:", err)
+          setIsPopupOpen(true) // Fallback to open popup even if fullscreen fails
+        })
+    } else {
+      setIsPopupOpen(true) // Fallback for browsers that don't support fullscreen API
+    }
   }
   const closePopup = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch((err) => {
+        console.error("Error attempting to exit fullscreen mode:", err)
+      })
+    }
     setIsPopupOpen(false)
   }
+  // useEffect(() => {
+  //   const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
+  //     console.log("Selected point:", event)
+
+  //     const selectedPoint = event.detail
+  //     const pointId = selectedPoint.id
+
+  //     // Copy the point ID
+  //     setSelectedPointId(pointId)
+
+  //     // Close the popup
+  //     closePopup()
+  //   }
+
+  //   document.addEventListener(
+  //     "onpointselect",
+  //     handlePointSelected as EventListener
+  //   )
+
+  //   return () => {
+  //     document.removeEventListener(
+  //       "onpointselect",
+  //       handlePointSelected as EventListener
+  //     )
+  //   }
+  // }, [closePopup])
   useEffect(() => {
     const handlePointSelected = (event: CustomEvent<{ id: string }>) => {
       console.log("Selected point:", event)
@@ -36,10 +81,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
       const selectedPoint = event.detail
       const pointId = selectedPoint.id
 
-      // Copy the point ID
       setSelectedPointId(pointId)
-
-      // Close the popup
       closePopup()
     }
 
@@ -55,6 +97,13 @@ export const BillingAddressFormNew: React.FC<Props> = ({
       )
     }
   }, [closePopup])
+
+  window.addEventListener("unhandledrejection", (event) => {
+    if (event.reason.message === "Not in fullscreen mode") {
+      console.warn("Fullscreen mode required by GeoWidget but not enabled.")
+      event.preventDefault() // Prevents the error from stopping execution
+    }
+  })
 
   if (!appCtx || !settings) {
     return null

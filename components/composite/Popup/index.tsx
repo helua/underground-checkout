@@ -37,7 +37,7 @@ const overlayStyles: CSSProperties = {
 const popupStyles: CSSProperties = {
   backgroundColor: "#fff",
   padding: "0px",
-  borderRadius: "8px",
+  borderRadius: "1px",
   height: "90vh",
   maxWidth: "80vw",
   width: "100%",
