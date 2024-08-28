@@ -1,5 +1,5 @@
 import { Address } from "@commercelayer/sdk"
-import { useContext, useEffect, useState } from "react"
+import { CSSProperties, useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 import tw from "twin.macro"
 
@@ -240,7 +240,9 @@ export const BillingAddressFormNew: React.FC<Props> = ({
         />
         <div className="mb-8">
           <ButtonWrapper>
-            <Button onClick={openPopup}>Wybierz Paczkomat</Button>
+            <a style={GeoWidget} onClick={openPopup}>
+              Wybierz Paczkomat InPost
+            </a>
           </ButtonWrapper>
         </div>
         <Popup isOpen={isPopupOpen} onClose={closePopup}>
@@ -321,3 +323,14 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   ${tw`grid lg:grid-cols-2 lg:gap-4`}
 `
+const GeoWidget: CSSProperties = {
+  // color: "rgb(230, 145, 0)",
+  color: "black",
+  textDecoration: "underline",
+  fontSize: "12px",
+  lineHeight: "42px",
+  cursor: "pointer",
+  backgroundColor: "#ffcd00",
+  padding: "1px 10px",
+  borderRadius: "6px",
+}
