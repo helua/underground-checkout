@@ -326,11 +326,11 @@ const Grid = styled.div`
 const GeoWidget: CSSProperties = {
   // color: "rgb(230, 145, 0)",
   color: "black",
-  textDecoration: "underline",
-  fontSize: "12px",
+  fontSize: "14px",
   lineHeight: "42px",
   cursor: "pointer",
   backgroundColor: "#ffcd00",
   padding: "1px 10px",
   borderRadius: "6px",
+  fontWeight: "bold",
 }
