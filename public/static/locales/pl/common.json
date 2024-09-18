@@ -6,12 +6,11 @@
         "retry_error_description": "Próbuję załadować stronę ponownie",
         "invalid": "Zamówienie jest nieosiągalne.",
         "edit": "Edytuj",
-        "free" : "Darmowa",
+        "free": "Darmowa",
         "apply": "Wprowadź",
         "privacy_and_terms": "Klikając zgadzasz się na <bold><termsUrl>regulamin</termsUrl></bold> oraz <bold><privacyUrl>zasady prywatności</privacyUrl></bold>.",
         "checkoutTitle": "Checkout"
     },
-  
     "error": {
         "general": "Błąd generalny",
         "shipments": "Niektóre pozycje nie mają wybranej metody wysyłki",
@@ -20,8 +19,7 @@
         "payer": "Płatnik nie zatwierdził płatności",
         "resourceID": "Pozycja o danym ID nie została odnaleziona"
     },
-  
-    "input":{
+    "input": {
         "cantBlank": "Pole jest obowiązkowe",
         "mustBeValidFormat": "Błędny format wypełnienia",
         "mustBeValidEmail": "Proszę podaj prawidłowy adres e-mail",
@@ -29,7 +27,6 @@
         "mustBeValidCoupon": "Proszę podaj prawidłowy kupon zniżkowy",
         "mustBeValidGiftCard": "Proszę podaj prawidłowy kod karty podarunkowej"
     },
-  
     "orderRecap": {
         "order_summary": "Podsumowanie zamówienia",
         "cartContains": "Twój koszyk zawiera {{count}} produkt",
@@ -65,17 +62,15 @@
         "frequency.six-month": "Co sześć miesięcy",
         "frequency.yearly": "Co roku"
     },
-  
     "stepCustomer": {
-        "title": "Dane nabywcy",
+        "title": "Nabywca",
         "addNewAddress": "Dodaj nowy adress",
         "saveAddressBook": "Zachowaj adres w swoim koncie klienta",
         "continueToDelivery": "Dalej do dostawy",
-        "notSet": "Uzupełnij proszę swoje dane kontaktowe i wybierz swój Paczkomat, jeśli tak jak ja preferujesz tę formę wysyłki",
+        "notSet": "Zamawiasz tylko produkt cyfrowy? Zostaw proszę adres w naszej bazie na potrzebę przyszłych akcji promocyjnych.",
         "notSetNoDelivery": "Proszę uzupełnij dane adresowe",
         "closeForm": "Wybierz adres"
     },
-  
     "stepShipping": {
         "title": "Dostawa",
         "shipment": "Wysyłka <Wrap>{{current}} of {{total}}</Wrap>",
@@ -87,7 +82,7 @@
         "methodSelected": "Twoje zamówienie ma wybraną {{count}} metodę wysyłki",
         "methodSelected_other": "Twoje zamówienie ma wybrane {{count}} metody wysyłki",
         "methodUnselected": "Wybierz metodę wysyłki",
-        "deliveryLeadTime" : "<0/> - <1/> dni",
+        "deliveryLeadTime": "<0/> - <1/> dni",
         "externalPrice": "W następnym kroku",
         "continueToPayment": "Dalej do płatności",
         "notRequired": "To zamówienie nie wymaga dostawy"
@@ -97,7 +92,7 @@
         "title": "Płatność",
         "methodUnselected": "Wybierz metodę płatności",
         "creditCard": "Szybkie płatności (Stripe)",
-        "wireTransfer": "Przelew tradycyjny (Blik)",
+        "wireTransfer": "Przelew tradycyjny",
         "wireTransferDescription": "Przy potwierdzeniu zamówienia otrzymasz instrukcję jak dokończyć płatność.",
         "paypalDescription": "Po złożeniu zamówienia zostaniesz przekierowany na stronę PayPal, gdzie trzeba się zalogować i dokończyć płatność",
         "endingIn": "<0/> numer zakończony cyframi <1/>",
@@ -111,7 +106,7 @@
     },
   
     "addressForm" : {
-        "customer_email" : "Twój adres e-mail",
+        "customer_email" : "E-mail",
         "billing_address_title": "Adres",
         "billing_address_first_name": "Imię",
         "billing_address_last_name": "Nazwisko",
@@ -141,10 +136,10 @@
     },
   
     "stepComplete": {
-        "title": "Bardzo Ci dziękuję za docenienie mojej pracy i złożenie zamówienia.",
+        "title": "Dziękujemy za złożenie zamówienia!",
         "description": "Numer tego zamówienia to: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
-        "blik":  "Potwierdź je teraz wysyłając blika na <WrapperPhone>#{{supportPhone}}</WrapperPhone>",
-        "thank":  "Zapleciony kamień  wyślę do Ciebie w przeciągu 7 dni.<br />Mam nadzieję, że przyniesie Ci dużo dobra! <br />✨ Wierzmy we wszystko, co niewidzialne, <br />Zosia Fairtouch",
+        "blik": "Potwierdź je teraz wysyłając blika na <WrapperPhone>#{{supportPhone}}</WrapperPhone>",
+        "thank": "Słowa podziękowania, Kuba Knap",
         "continue": "Wróć do zakupów",
         "supportEmail": "W wypadku pytań napisz do mnie na adres e-mail: <br /><WrapperStyle><WrapperEmail>{{email}}</WrapperEmail></WrapperStyle>",
         "supportPhone": "W wypadku pytań zadzwoń do mnie pod: <br /><WrapperStyle><WrapperPhone>{{phone}}</WrapperPhone></WrapperStyle>",

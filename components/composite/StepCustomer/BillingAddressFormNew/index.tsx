@@ -1,5 +1,5 @@
 import { Address } from "@commercelayer/sdk"
-import { CSSProperties, useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 import tw from "twin.macro"
 
@@ -8,7 +8,7 @@ import { ShippingToggleProps } from "components/composite/StepCustomer"
 import { AddressInputGroup } from "components/composite/StepCustomer/AddressInputGroup"
 import { AppContext } from "components/data/AppProvider"
 import { useSettingsOrInvalid } from "components/hooks/useSettingsOrInvalid"
-import { ButtonWrapper } from "components/ui/Button"
+// import { ButtonWrapper } from "components/ui/Button"
 
 interface Props {
   billingAddress: NullableType<Address>
@@ -79,29 +79,10 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const [selectedPointState, setSelectedPointState] = useState<string | null>(
     null
   )
-  const openPopup = () => {
-    setIsPopupOpen(true)
-    // const elem = document.documentElement
-    // if (elem.requestFullscreen) {
-    //   elem
-    //     .requestFullscreen()
-    //     .then(() => {
-    //       setIsPopupOpen(true)
-    //     })
-    //     .catch((err) => {
-    //       console.error("Error attempting to enter fullscreen mode:", err)
-    //       setIsPopupOpen(true) // Fallback to open popup even if fullscreen fails
-    //     })
-    // } else {
-    //   setIsPopupOpen(true) // Fallback for browsers that don't support fullscreen API
-    // }
-  }
+  // const openPopup = () => {
+  //   setIsPopupOpen(true)
+  // }
   const closePopup = () => {
-    // if (document.fullscreenElement) {
-    //   document.exitFullscreen().catch((err) => {
-    //     console.error("Error attempting to exit fullscreen mode:", err)
-    //   })
-    // }
     setIsPopupOpen(false)
   }
   // simple working
@@ -230,40 +211,36 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           value={billingAddress?.last_name || ""}
         />
       </Grid>
-      <Grid>
-        <AddressInputGroup
-          fieldName="billing_address_line_2"
-          resource="billing_address"
-          required={false}
-          type="text"
-          value={selectedPointId || billingAddress?.line_2 || ""}
-        />
-        <div className="mb-8">
-          <ButtonWrapper>
-            <a style={GeoWidget} onClick={openPopup}>
-              Wybierz Paczkomat InPost
-            </a>
-          </ButtonWrapper>
-        </div>
-        <Popup isOpen={isPopupOpen} onClose={closePopup}>
-          <inpost-geowidget
-            token="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNDAwNjA1NDMsImlhdCI6MTcyNDcwMDU0MywianRpIjoiZWQ5YzM3MTAtYjNjMi00MDNhLThmMzUtMTE5ODhlOWY5YjA4IiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTpkajFRUTlzZXA0VlFPYmd2cXZWamVHblBLV2pmR3JwWVVoWDd2MjJoUWNVIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiNmY3OGNjNzktYzI5Zi00MmRhLWJhM2MtOWYxMTVlYTA0NDE5Iiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyIsInNpZCI6IjZmNzhjYzc5LWMyOWYtNDJkYS1iYTNjLTlmMTE1ZWEwNDQxOSIsImFsbG93ZWRfcmVmZXJyZXJzIjoiZmFpcnRvdWNoLWNoZWNrb3V0Lm5ldGxpZnkuYXBwIiwidXVpZCI6IjY1YmI1MDBkLTliNzktNGMyMi05MWEwLTJhOWZkMTg0MmZjZSJ9.XfhP4RgyIwNftvo_DiU_owP0Ip2eHyA0yXrjRh76JUgibX9WsiJixB9_6l2-w-7K1INASsb6-JGDoT0Zfz4bzyVJUlA2MzyxAbS_j9QR_HNo86nsPS4x-JhOL9YJlK93CJFnn7WBNQWndMRSDGDSeJ8C_jY-wWzci-tsv29z74i1iSfDiD7grARdLzO9ezdCKLxxSORCXiq0wqfzaNTxBrAKGtKieDUvuPttqRUp47RhBFXA_o5vBcMLTVlRr2jjzBdn8DwaI2YYWeJEPKYa4lyZN38Mu1jkLQiqadPogWJetkl0keIsRCstmWKpd9vdM4-tBo8r0RPOEaViEJbxcQ"
-            language="pl"
-            config="parcelcollect"
-            onpoint="onpointselect"
-          ></inpost-geowidget>
-          {/* <InpostGeowidget
-            token="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNDAwNjA1NDMsImlhdCI6MTcyNDcwMDU0MywianRpIjoiZWQ5YzM3MTAtYjNjMi00MDNhLThmMzUtMTE5ODhlOWY5YjA4IiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTpkajFRUTlzZXA0VlFPYmd2cXZWamVHblBLV2pmR3JwWVVoWDd2MjJoUWNVIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiNmY3OGNjNzktYzI5Zi00MmRhLWJhM2MtOWYxMTVlYTA0NDE5Iiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyIsInNpZCI6IjZmNzhjYzc5LWMyOWYtNDJkYS1iYTNjLTlmMTE1ZWEwNDQxOSIsImFsbG93ZWRfcmVmZXJyZXJzIjoiZmFpcnRvdWNoLWNoZWNrb3V0Lm5ldGxpZnkuYXBwIiwidXVpZCI6IjY1YmI1MDBkLTliNzktNGMyMi05MWEwLTJhOWZkMTg0MmZjZSJ9.XfhP4RgyIwNftvo_DiU_owP0Ip2eHyA0yXrjRh76JUgibX9WsiJixB9_6l2-w-7K1INASsb6-JGDoT0Zfz4bzyVJUlA2MzyxAbS_j9QR_HNo86nsPS4x-JhOL9YJlK93CJFnn7WBNQWndMRSDGDSeJ8C_jY-wWzci-tsv29z74i1iSfDiD7grARdLzO9ezdCKLxxSORCXiq0wqfzaNTxBrAKGtKieDUvuPttqRUp47RhBFXA_o5vBcMLTVlRr2jjzBdn8DwaI2YYWeJEPKYa4lyZN38Mu1jkLQiqadPogWJetkl0keIsRCstmWKpd9vdM4-tBo8r0RPOEaViEJbxcQ"
-            onPoint={onPointCallback}
-          /> */}
-        </Popup>
-      </Grid>
+      {/* <Grid> */}
       <AddressInputGroup
         fieldName="billing_address_line_1"
         resource="billing_address"
         type="text"
         value={selectedPointAddress || billingAddress?.line_1 || ""}
       />
+      <AddressInputGroup
+        fieldName="billing_address_line_2"
+        resource="billing_address"
+        required={false}
+        type="text"
+        value={selectedPointId || billingAddress?.line_2 || ""}
+      />
+      {/* <div className="mb-8">
+          <ButtonWrapper>
+            <a style={GeoWidget} onClick={openPopup}>
+              Wybierz Paczkomat InPost
+            </a>
+          </ButtonWrapper>
+        </div> */}
+      <Popup isOpen={isPopupOpen} onClose={closePopup}>
+        <inpost-geowidget
+          token="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNDAwNjA1NDMsImlhdCI6MTcyNDcwMDU0MywianRpIjoiZWQ5YzM3MTAtYjNjMi00MDNhLThmMzUtMTE5ODhlOWY5YjA4IiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTpkajFRUTlzZXA0VlFPYmd2cXZWamVHblBLV2pmR3JwWVVoWDd2MjJoUWNVIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiNmY3OGNjNzktYzI5Zi00MmRhLWJhM2MtOWYxMTVlYTA0NDE5Iiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyIsInNpZCI6IjZmNzhjYzc5LWMyOWYtNDJkYS1iYTNjLTlmMTE1ZWEwNDQxOSIsImFsbG93ZWRfcmVmZXJyZXJzIjoiZmFpcnRvdWNoLWNoZWNrb3V0Lm5ldGxpZnkuYXBwIiwidXVpZCI6IjY1YmI1MDBkLTliNzktNGMyMi05MWEwLTJhOWZkMTg0MmZjZSJ9.XfhP4RgyIwNftvo_DiU_owP0Ip2eHyA0yXrjRh76JUgibX9WsiJixB9_6l2-w-7K1INASsb6-JGDoT0Zfz4bzyVJUlA2MzyxAbS_j9QR_HNo86nsPS4x-JhOL9YJlK93CJFnn7WBNQWndMRSDGDSeJ8C_jY-wWzci-tsv29z74i1iSfDiD7grARdLzO9ezdCKLxxSORCXiq0wqfzaNTxBrAKGtKieDUvuPttqRUp47RhBFXA_o5vBcMLTVlRr2jjzBdn8DwaI2YYWeJEPKYa4lyZN38Mu1jkLQiqadPogWJetkl0keIsRCstmWKpd9vdM4-tBo8r0RPOEaViEJbxcQ"
+          language="pl"
+          config="parcelcollect"
+          onpoint="onpointselect"
+        ></inpost-geowidget>
+      </Popup>
+      {/* </Grid> */}
       <Grid>
         <AddressInputGroup
           fieldName="billing_address_city"
@@ -323,14 +300,14 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   ${tw`grid lg:grid-cols-2 lg:gap-4`}
 `
-const GeoWidget: CSSProperties = {
-  // color: "rgb(230, 145, 0)",
-  color: "black",
-  fontSize: "14px",
-  lineHeight: "42px",
-  cursor: "pointer",
-  backgroundColor: "#ffcd00",
-  padding: "1px 10px",
-  borderRadius: "6px",
-  fontWeight: "bold",
-}
+// const GeoWidget: CSSProperties = {
+//   // color: "rgb(230, 145, 0)",
+//   color: "black",
+//   fontSize: "14px",
+//   lineHeight: "42px",
+//   cursor: "pointer",
+//   backgroundColor: "#ffcd00",
+//   padding: "1px 10px",
+//   borderRadius: "6px",
+//   fontWeight: "bold",
+// }
