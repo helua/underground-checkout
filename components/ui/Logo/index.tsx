@@ -15,7 +15,7 @@ export const Logo: React.FC<Props> = ({ logoUrl, companyName, className }) => {
 }
 
 const Image = styled.img`
-  ${tw`w-60 max-w-full mb-5 md:mb-10`}
+  ${tw`w-full max-w-full mb-5 md:mb-10`}
 `
 
 const Label = styled.h1`
