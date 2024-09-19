@@ -266,7 +266,11 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           // @ts-expect-error missing type
           states={states}
           type="text"
-          value={selectedPointState || billingAddress?.state_code || ""}
+          value={
+            selectedPointState ||
+            billingAddress?.state_code ||
+            "Wybierz województwo"
+          }
         />
         <AddressInputGroup
           fieldName="billing_address_zip_code"
