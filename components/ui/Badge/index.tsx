@@ -29,5 +29,5 @@ const StepBadge = styled.div<BadgeProps>(({ $active, $done, $skip }) => [
   tw`rounded-full text-contrast flex justify-center items-center w-6 h-6 text-xs font-bold`,
   $active && tw`bg-primary`,
   (!$active || $skip) && tw`bg-gray-400/50`,
-  $done && tw`bg-green-800`,
+  $done && tw`bg-green-950`,
 ])
