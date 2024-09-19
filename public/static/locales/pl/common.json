@@ -67,8 +67,8 @@
         "addNewAddress": "Dodaj nowy adress",
         "saveAddressBook": "Zachowaj adres w swoim koncie klienta",
         "continueToDelivery": "Dalej do dostawy",
-        "notSet": "Zamawiasz tylko produkt cyfrowy? Zostaw proszę adres w naszej bazie na potrzebę przyszłych akcji promocyjnych.",
-        "notSetNoDelivery": "Proszę uzupełnij dane adresowe",
+        "notSet": "Uzupełnij dane teleadresowe",
+        "notSetNoDelivery": "Zamawiasz tylko produkt cyfrowy? Zostaw proszę adres w naszej bazie na potrzebę przyszłych akcji promocyjnych.",
         "closeForm": "Wybierz adres"
     },
     "stepShipping": {
@@ -111,7 +111,7 @@
         "billing_address_first_name": "Imię",
         "billing_address_last_name": "Nazwisko",
         "billing_address_line_1": "Adres",
-        "billing_address_line_2": "Numer Paczkomatu InPost",
+        "billing_address_line_2": "Adres c.d.",
         "billing_address_city": "Miasto",
         "billing_address_country_code_placeholder": "Wybierz kraj",
         "billing_address_country_code": "Kraj",

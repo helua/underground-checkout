@@ -12,7 +12,7 @@ export const CheckIcon: React.FC = () => {
         <circle
           id="colored"
           className="colored_circle"
-          fill="#1FDA8A"
+          fill="#0f5939"
           cx="77"
           cy="77"
           r="72"
