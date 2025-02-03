@@ -140,7 +140,7 @@
         "title": "Dziękujemy za złożenie zamówienia!",
         "description": "Numer tego zamówienia to: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
         "blik": "Potwierdź je teraz wysyłając blika na <WrapperPhone>#{{supportPhone}}</WrapperPhone>",
-        "thank": "Słowa podziękowania, Kuba Knap",
+        "thank": "Słowa podziękowania, ZWR",
         "continue": "Wróć do zakupów",
         "supportEmail": "W wypadku pytań napisz do mnie na adres e-mail: <br /><WrapperStyle><WrapperEmail>{{email}}</WrapperEmail></WrapperStyle>",
         "supportPhone": "W wypadku pytań zadzwoń do mnie pod: <br /><WrapperStyle><WrapperPhone>{{phone}}</WrapperPhone></WrapperStyle>",
