@@ -93,7 +93,7 @@
         "title": "Płatność",
         "methodUnselected": "Wybierz metodę płatności",
         "creditCard": "Szybkie płatności (Stripe)",
-        "wireTransfer": "Przelew tradycyjny",
+        "wireTransfer": "Gotówka przy odbiorze",
         "wireTransferDescription": "Przy potwierdzeniu zamówienia otrzymasz instrukcję jak dokończyć płatność.",
         "paypalDescription": "Po złożeniu zamówienia zostaniesz przekierowany na stronę PayPal, gdzie trzeba się zalogować i dokończyć płatność",
         "endingIn": "<0/> numer zakończony cyframi <1/>",
