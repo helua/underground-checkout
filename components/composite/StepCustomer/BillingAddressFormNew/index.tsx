@@ -233,13 +233,13 @@ export const BillingAddressFormNew: React.FC<Props> = ({
         />
       </Grid>
       <Grid>
-        <AddressInputGroup
+        {/* <AddressInputGroup
           fieldName="billing_address_line_2"
           resource="billing_address"
           required={false}
           type="text"
           value={selectedPointId || billingAddress?.line_2 || ""}
-        />
+        /> */}
         {/* <div className="mb-8">
           <ButtonWrapper>
             <a style={GeoWidget} onClick={openPopup}>
