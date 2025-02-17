@@ -50,7 +50,7 @@
         "payment_method_amount": "Payment method",
         "subtotal_amount": "Subtotal",
         "total_amount": "Total",
-        "notSet": "To be calculated",
+        "notSet": "Included",
         "returnToCart": "Return to cart",
         "frequency.hourly": "Hourly",
         "frequency.daily": "Daily",

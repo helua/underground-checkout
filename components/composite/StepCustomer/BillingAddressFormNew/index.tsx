@@ -238,13 +238,13 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           type="text"
           value={selectedPointId || billingAddress?.line_2 || ""}
         />
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <ButtonWrapper>
             <a style={GeoWidget} onClick={openPopup}>
               Wybierz Paczkomat InPost
             </a>
           </ButtonWrapper>
-        </div>
+        </div> */}
         <Popup isOpen={isPopupOpen} onClose={closePopup}>
           <inpost-geowidget
             token="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNTM5NTAzMDcsImlhdCI6MTczODU5MDMwNywianRpIjoiMDJhNzUwN2UtNzhmZS00YThmLTkyZGYtODhlMTk3ZGQ4ZWI4IiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTpkajFRUTlzZXA0VlFPYmd2cXZWamVHblBLV2pmR3JwWVVoWDd2MjJoUWNVIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiNTJiNGE3ZjUtZDdkYy00OWNiLTk0YWItYzllN2U3ZmExYmEwIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyIsInNpZCI6IjUyYjRhN2Y1LWQ3ZGMtNDljYi05NGFiLWM5ZTdlN2ZhMWJhMCIsImFsbG93ZWRfcmVmZXJyZXJzIjoiY2hlY2tvdXQuendyLndhdy5wbCIsInV1aWQiOiI2NWJiNTAwZC05Yjc5LTRjMjItOTFhMC0yYTlmZDE4NDJmY2UifQ.j7BR_9ztrwHTxI9_9-1tX_hb2tU395AVw7Q4F2AlpfigF3Y2_xzzM7YEekS_nwzQ3GqBnJfh8UlH5ounZr0gcQ3bRB0DxiR76be3QVpNytK1SNhh8FUNnMr7s_AevfzWprs0ItsHJ3cZo6gw935ETcjr9AVVOwqOux-tZwfiKk5-jOz_akPwE00HY8paFFzi7-cdJK9cPC6bz4O-922GJpva-z8OP1szdoY2auMxq51ZuVlhyylbVOICOoQHYkiXu7lrD-PFWYXiRDPx_1_FJ45OZ8Pmgv-Kjvb5kmhKRvXXV8uBjiWs9anQLN5T1kd2A0FCeG1mLVcljM8E4hv3_w"
