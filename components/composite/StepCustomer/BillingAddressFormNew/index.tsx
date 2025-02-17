@@ -1,5 +1,6 @@
 import { Address } from "@commercelayer/sdk"
-import { CSSProperties, useContext, useEffect, useState } from "react"
+// import { CSSProperties, useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 import tw from "twin.macro"
 
@@ -8,7 +9,7 @@ import { ShippingToggleProps } from "components/composite/StepCustomer"
 import { AddressInputGroup } from "components/composite/StepCustomer/AddressInputGroup"
 import { AppContext } from "components/data/AppProvider"
 import { useSettingsOrInvalid } from "components/hooks/useSettingsOrInvalid"
-import { ButtonWrapper } from "components/ui/Button"
+// import { ButtonWrapper } from "components/ui/Button"
 
 interface Props {
   billingAddress: NullableType<Address>
@@ -79,23 +80,24 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const [selectedPointState, setSelectedPointState] = useState<string | null>(
     null
   )
-  const openPopup = () => {
-    setIsPopupOpen(true)
-    // const elem = document.documentElement
-    // if (elem.requestFullscreen) {
-    //   elem
-    //     .requestFullscreen()
-    //     .then(() => {
-    //       setIsPopupOpen(true)
-    //     })
-    //     .catch((err) => {
-    //       console.error("Error attempting to enter fullscreen mode:", err)
-    //       setIsPopupOpen(true) // Fallback to open popup even if fullscreen fails
-    //     })
-    // } else {
-    //   setIsPopupOpen(true) // Fallback for browsers that don't support fullscreen API
-    // }
-  }
+  // const openPopup = () => {
+  //   setIsPopupOpen(true)
+  //   //to było zakomentowane
+  //   // const elem = document.documentElement
+  //   // if (elem.requestFullscreen) {
+  //   //   elem
+  //   //     .requestFullscreen()
+  //   //     .then(() => {
+  //   //       setIsPopupOpen(true)
+  //   //     })
+  //   //     .catch((err) => {
+  //   //       console.error("Error attempting to enter fullscreen mode:", err)
+  //   //       setIsPopupOpen(true) // Fallback to open popup even if fullscreen fails
+  //   //     })
+  //   // } else {
+  //   //   setIsPopupOpen(true) // Fallback for browsers that don't support fullscreen API
+  //   // }
+  // }
   const closePopup = () => {
     // if (document.fullscreenElement) {
     //   document.exitFullscreen().catch((err) => {
@@ -323,14 +325,15 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   ${tw`grid lg:grid-cols-2 lg:gap-4`}
 `
-const GeoWidget: CSSProperties = {
-  // color: "rgb(230, 145, 0)",
-  color: "black",
-  fontSize: "14px",
-  lineHeight: "42px",
-  cursor: "pointer",
-  backgroundColor: "#ffcd00",
-  padding: "1px 10px",
-  borderRadius: "6px",
-  fontWeight: "bold",
-}
+// temp ebucc
+// const GeoWidget: CSSProperties = {
+//   // color: "rgb(230, 145, 0)",
+//   color: "black",
+//   fontSize: "14px",
+//   lineHeight: "42px",
+//   cursor: "pointer",
+//   backgroundColor: "#ffcd00",
+//   padding: "1px 10px",
+//   borderRadius: "6px",
+//   fontWeight: "bold",
+// }
