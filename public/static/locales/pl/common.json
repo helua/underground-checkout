@@ -67,22 +67,22 @@
         "addNewAddress": "Dodaj nowy adress",
         "saveAddressBook": "Zachowaj adres w swoim koncie klienta",
         "continueToDelivery": "Dalej do dostawy",
-        "notSet": "Uzupełnij proszę swoje dane kontaktowe lub wybierz swój Paczkomat - formę wysyłki potwierdzisz w nastepnym kroku",
+        "notSet": "Dane kontaktowe i wybór Paczkomatu lub adresu pocztowego",
         "notSetNoDelivery": "Proszę uzupełnij dane adresowe",
         "closeForm": "Wybierz adres"
     },
   
     "stepShipping": {
         "title": "Dostawa",
-        "shipment": "Wysyłka <Wrap>{{current}} of {{total}}</Wrap>",
+        "shipment": "Wysyłka <Wrap>{{current}} z {{total}}</Wrap>",
         "notAvailable": "Podany adres jest poza naszą strefą dostawy. Zmień adres dostawy lub zgłoś się w celu uzyskania pomocy.",
         "outOfStock": "Produkt z Twojego zamówienia nie jest już dostępny.",
         "outOfStockWithCart": " Kliknij <WrapperStyle><Link>{{link}}</Link></WrapperStyle>, żeby edytować swój koszyk.",
         "outOfStockLink": "tutaj",
         "stockTransfer": "<0/> z <1/> produktów zostanie przetransferowanych",
-        "methodSelected": "Twoje zamówienie ma wybraną {{count}} metodę wysyłki",
-        "methodSelected_other": "Twoje zamówienie ma wybrane {{count}} metody wysyłki",
-        "methodUnselected": "Wybierz metodę wysyłki",
+        "methodSelected": "Twoje zamówienie będzie podzielone na {{count}} wysyłki",
+        "methodSelected_other": "Twoje zamówienie będzie podzielone na {{count}} wysyłki",
+        "methodUnselected": "Wybór metody wysyłki",
         "deliveryLeadTime": "<0/> - <1/> dni",
         "externalPrice": "W następnym kroku",
         "continueToPayment": "Dalej do płatności",
@@ -91,7 +91,7 @@
   
     "stepPayment": {
         "title": "Płatność",
-        "methodUnselected": "Wybierz metodę płatności",
+        "methodUnselected": "Wybór medoty płatności",
         "creditCard": "Szybkie płatności (Stripe)",
         "wireTransfer": "Przelew tradycyjny",
         "wireTransferDescription": "Przy potwierdzeniu zamówienia otrzymasz instrukcję jak dokończyć płatność.",
