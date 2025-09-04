@@ -67,7 +67,7 @@
         "addNewAddress": "Dodaj nowy adress",
         "saveAddressBook": "Zachowaj adres w swoim koncie klienta",
         "continueToDelivery": "Dalej do dostawy",
-        "notSet": "Dane kontaktowe i wybór Paczkomatu lub adresu pocztowego",
+        "notSet": "Dane kontaktowe i wybór Paczkomatu InPost",
         "notSetNoDelivery": "Proszę uzupełnij dane adresowe",
         "closeForm": "Wybierz adres"
     },
