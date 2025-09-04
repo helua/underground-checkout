@@ -258,46 +258,48 @@ export const BillingAddressFormNew: React.FC<Props> = ({
           /> */}
         </Popup>
       </Grid>
-      <AddressInputGroup
-        fieldName="billing_address_line_1"
-        resource="billing_address"
-        type="text"
-        value={selectedPointAddress || billingAddress?.line_1 || ""}
-      />
-      <Grid>
+      <div style={{ display: 'none' }}>
         <AddressInputGroup
-          fieldName="billing_address_city"
+          fieldName="billing_address_line_1"
           resource="billing_address"
           type="text"
-          value={selectedPointCity || billingAddress?.city || ""}
+          value={selectedPointAddress || billingAddress?.line_1 || ""}
         />
-        <AddressInputGroup
-          fieldName="billing_address_country_code"
-          resource="billing_address"
-          type="text"
-          // @ts-expect-error missing type
-          countries={countries}
-          defaultCountry={defaultCountry}
-          openShippingAddress={openShippingAddress}
-          value={billingAddress?.country_code || "PL"}
-        />
-      </Grid>
-      <Grid>
-        <AddressInputGroup
-          fieldName="billing_address_state_code"
-          resource="billing_address"
-          // @ts-expect-error missing type
-          states={states}
-          type="text"
-          value={selectedPointState || billingAddress?.state_code || ""}
-        />
-        <AddressInputGroup
-          fieldName="billing_address_zip_code"
-          resource="billing_address"
-          type="text"
-          value={selectedPointZipCode || billingAddress?.zip_code || ""}
-        />
-      </Grid>
+        <Grid>
+          <AddressInputGroup
+            fieldName="billing_address_city"
+            resource="billing_address"
+            type="text"
+            value={selectedPointCity || billingAddress?.city || ""}
+          />
+          <AddressInputGroup
+            fieldName="billing_address_country_code"
+            resource="billing_address"
+            type="text"
+            // @ts-expect-error missing type
+            countries={countries}
+            defaultCountry={defaultCountry}
+            openShippingAddress={openShippingAddress}
+            value={billingAddress?.country_code || "PL"}
+          />
+        </Grid>
+        <Grid>
+          <AddressInputGroup
+            fieldName="billing_address_state_code"
+            resource="billing_address"
+            // @ts-expect-error missing type
+            states={states}
+            type="text"
+            value={selectedPointState || billingAddress?.state_code || ""}
+          />
+          <AddressInputGroup
+            fieldName="billing_address_zip_code"
+            resource="billing_address"
+            type="text"
+            value={selectedPointZipCode || billingAddress?.zip_code || ""}
+          />
+        </Grid>
+      </div>
       <AddressInputGroup
         fieldName="billing_address_phone"
         resource="billing_address"
